@@ -1,2 +1,3 @@
 # tara-paper
-Enhanced, academic and detailed version of TARA
+
+Enhanced and detailed version of TARA condensed in a academic paper.
