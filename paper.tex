@@ -1,4 +1,5 @@
 \documentclass[]{article}
+% \usepackage[backend=bibtex,style=verbose-trad2]{biblatex}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 
@@ -12,16 +13,20 @@
 \maketitle
 
 \begin{abstract}
-This paper presents a new consensus algorithm based on Byzantine Fault Tolerant[1] RAFT [2] with a hybrid architecture framework that proposes linear as well as exponential robustness in the back-end systems supporting various sorts of transactions that demand absolute speed, resilience, accuracy, integrity and trust.
+This paper presents a new consensus algorithm based on Byzantine Fault Tolerant\cite{ARTICLE:1} RAFT \cite{ARTICLE:2} with a hybrid architecture framework that proposes linear as well as exponential robustness in the back-end systems supporting various sorts of transactions that demand absolute speed, resilience, accuracy, integrity and trust.
 \end{abstract}
 
 \section{Background}
+Distributed systems have become quintessential in empowering the digital growth of organizations in many verticals. It is a shared responsibility among ourselves to simplify and yet provide architecture that can exhibit stable properties and support financial or commodity transactions from multiple verticals that demand a trusted environment. Readers are highly encouraged to go through the cited articles on PBFT \cite{ARTICLE:1}, RAFT \cite{ARTICLE:2}, and Tangaroa \cite{ARTICLE:3} thoroughly before reviewing this paper.
 
 \section{Introduction}
+The TARA architecture leverages a compound set of theories such as Practical Byzantine Fault Tolerance, Raft Algorithm, and cryptographic message exchange etc. on top of the distributed systems. Each concept derived from the above is effectively combined to form an architecture that serves the core purpose of laying out a stable architecture to transact, manage and represent relevant transactions of a commodity.
 
 \section{Algorithm}
 
 \section{Correctness}
+We have proposed the TARA architecture, with various design-centric and mathematical techniques that prove the liveness, safety and certainty of the distributed system. The proposed architecture not only prescribes to the theories of Practical Byzantine Fault Tolerance, Raft algorithm etc., but also improves upon the robustness of the system over failure rates, thereby making the system free of fault-prone environments and increasing availability without added cost of time and compute.
+We are grateful to the authors of cited papers \cite{ARTICLE:1}, \cite{ARTICLE:2} and \cite{ARTICLE:3} for providing invaluable knowledge, research resources, time, guidance and feedback on the TARA architecture.
 
 \section{Applicability}
 % \subsection{Sentinel Scalability}
