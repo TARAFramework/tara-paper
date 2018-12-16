@@ -23,8 +23,15 @@ Distributed systems have become quintessential in empowering the digital growth 
 \section{Introduction}
 The TARA architecture leverages a compound set of theories such as Practical Byzantine Fault Tolerance\cite{ARTICLE:1}, Raft Algorithm\cite{ARTICLE:2}, and cryptographic message exchange etc. on top of the distributed systems\cite{ARTICLE:3}. Each concept derived from the above is effectively combined to form an architecture that serves the core purpose of laying out a stable architecture to transact, manage and represent relevant transactions of a commodity.
 \subsection{Grand Nodes}
+Grand nodes are independent group of nodes distributed across the geography to perform as gatekeepers.
+Gatekeeping activities include the reception of incoming messages, transaction payloads, and classify them based on the relevant asset class tagged.
+Grand nodes are dedicated resources that have above the par computational power to perform gatekeeping activities in a reliable manner. Nodes with a dedicated amount of computational hardware, NTQ and stake can participate as a candidate to be elected as one of the grand node.
 \subsection{Star Nodes}
+Star nodes are the federated leaders of a small cluster with size ranging from a minimum of 4 nodes and above.
+The duty of a Star Nodes is to recieve the set of transactions grouped by grand nodes into respective asset class and perform formal verification of these transactions.
+The formally verified transactions are now bundled into a new block based on the timestamp proximity and propogated across other clusters in the network. 
 \subsection{Service Nodes}
+Service Nodes are the followers in the cluster, and recieve the asset-specific transactions of interest from their leader Star Node and perform formal verification. Majority of the service nodes are expected to pass the formal verification by default to propogate a block. However, platforms can be given the freedom and flexibility to customize the same intenrally on a case-by-case basis.
 
 \section{Algorithm}
 \subsection{Federated leadership}
