@@ -50,6 +50,12 @@ We are grateful to the authors of cited papers \cite{ARTICLE:1}, \cite{ARTICLE:2
 
 \section{Implementation and evaluation}
 \subsection{Reference implementation}
+The implementation of the proposed architecture doesn’t require special care or teaching, but needs the practical approach to implementing its technique showcased to drastically reduce the rate of absolute system failure. 
+
+We encourage the reader to contact the author, if any correspondence is required to assist/guide in implementing or evaluating the architecture on an existing BFT Raft system fulfilling the design requirements mentioned in Section 3.1.
+
+Since Raft systems communicate through RPCs, we propose the reader to create a new RPC for nodes to communicate the point of failure and current state to the star node in case of TARA((1,-2), (1,-2)). The AppendEntries RPC[2] from leader may be extended to adding the identity of star nodes.
+
 \subsection{Performance}
 
 \section{Related work}
