@@ -46,8 +46,24 @@ The TARA architecture comprises of modular components that are supported by the 
 \subsection{Follow-up Sync}
 
 \section{Correctness}
-We have proposed the TARA architecture, with various design-centric and mathematical techniques that prove the liveness, safety and certainty of the distributed system. The proposed architecture not only prescribes to the theories of Practical Byzantine Fault Tolerance, Raft algorithm etc., but also improves upon the robustness of the system over failure rates, thereby making the system free of fault-prone environments and increasing availability without added cost of time and compute.
-We are grateful to the authors of cited papers \cite{ARTICLE:1}, \cite{ARTICLE:2} and \cite{ARTICLE:3} for providing invaluable knowledge, research resources, time, guidance and feedback on the TARA architecture.
+The novel aspect of the TARA architecture can be observed by considering the failure scenario mentioned above. A TARA distributed network suffering from 2 byzantine faults in each service cluster will respond proactively in the following manner:
+
+
+Fig 3.4: An ideal case of TARA((1,-2)(1,-2)) network demonstrating TARA architecture with each service cluster suffering from two byzantine / non-byzantine faults.
+
+From the figure 3.4, we clearly observe that the remaining node in each ternary augmented cluster connects automatically to the star node for committing its transaction log to the latest previous index. Here, we observe the importance of the star node, the global state machine, comprising of logs from committed logs of leader from all the clusters.
+
+
+Fig 3.5: New triad formed as a result of 2 byzantine / non-byzantine failures, TARA((1,-2)(1,-2)).
+
+This change in the network will create a new triad (as shown in the figure 3.5 above), leaded by the star node in the first term of the new triad composed. We may also observe that the newly composed triad is capable of tolerating 1/3rd of fault, i.e., the system is capable of tolerating one more node failure, byzantine or not.
+
+Hence, the proposed model of architecture, is able to tolerate up-to a maximum of n - f failures out of f expected byzantine failures and form a quorum decently up-to f, and hence making the system more usable than any other proposed models in [1] and [3].
+% \begin{figure}[h!]
+% 	\includegraphics[width=\linewidth]{paul-bran.jpg}
+% 	\caption{An ideal case of TARA((1,-2)(1,-2)) network demonstrating TARA architecture with each service cluster suffering from two byzantine / non-byzantine faults.}
+% 	\label{fig:3.4}
+% \end{figure}
 
 \section{Applicability}
 \subsection{Sentinel Scalability}
