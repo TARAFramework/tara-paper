@@ -3,6 +3,7 @@
 % \usepackage[backend=bibtex,style=verbose-trad2]{biblatex}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
+\usepackage{graphicx}
 
 %opening
 \title{Ternary Augmented Raft Architecture}
@@ -22,14 +23,17 @@ Distributed systems have become quintessential in empowering the digital growth 
 
 \section{Introduction}
 The TARA architecture leverages a compound set of theories such as Practical Byzantine Fault Tolerance\cite{ARTICLE:1}, Raft Algorithm\cite{ARTICLE:2}, and cryptographic message exchange etc. on top of the distributed systems\cite{ARTICLE:3}. Each concept derived from the above is effectively combined to form an architecture that serves the core purpose of laying out a stable architecture to transact, manage and represent relevant transactions of a commodity.
+
 \subsection{Grand Nodes}
 Grand nodes are independent group of nodes distributed across the geography to perform as gatekeepers.
 Gatekeeping activities include the reception of incoming messages, transaction payloads, and classify them based on the relevant asset class tagged.
 Grand nodes are dedicated resources that have above the par computational power to perform gatekeeping activities in a reliable manner. Nodes with a dedicated amount of computational hardware, NTQ and stake can participate as a candidate to be elected as one of the grand node.
+
 \subsection{Star Nodes}
 Star nodes are the federated leaders of a small cluster with size ranging from a minimum of 4 nodes and above.
 The duty of a Star Nodes is to recieve the set of transactions grouped by grand nodes into respective asset class and perform formal verification of these transactions.
 The formally verified transactions are now bundled into a new block based on the timestamp proximity and propogated across other clusters in the network. 
+
 \subsection{Service Nodes}
 Service Nodes are the followers in the cluster, and recieve the asset-specific transactions of interest from their leader Star Node and perform formal verification. Majority of the service nodes are expected to pass the formal verification by default to propogate a block. However, platforms can be given the freedom and flexibility to customize the same intenrally on a case-by-case basis.
 
@@ -58,7 +62,18 @@ Fig 3.5: New triad formed as a result of 2 byzantine / non-byzantine failures, T
 
 This change in the network will create a new triad (as shown in the figure 3.5 above), leaded by the star node in the first term of the new triad composed. We may also observe that the newly composed triad is capable of tolerating 1/3rd of fault, i.e., the system is capable of tolerating one more node failure, byzantine or not.
 
-Hence, the proposed model of architecture, is able to tolerate up-to a maximum of n - f failures out of f expected byzantine failures and form a quorum decently up-to f, and hence making the system more usable than any other proposed models in [1] and [3].
+Hence, the proposed model of architecture, is able to tolerate up-to a maximum of n - f failures out of f expected byzantine failures and form a quorum decently up-to f, and hence making the system more usable than any other proposed models in \cite{ARTICLE:1} and \cite{ARTICLE:3}.
+
+\subsection{Managing Failures}
+As proposed in the concept of Practical Byzantine Fault Tolerance\cite{ARTICLE:1} and Tangaroa\cite{ARTICLE:3} , a BFT Raft cluster designed to tolerate ‘f’ number of Byzantine failures must contain at least n ≥ 3f + 1 nodes, where n − f nodes form a quorum \cite{ARTICLE:3}.
+
+Consider, to sustain a maximum number of 2 failures, n = 7. Our test network depicted in Fig3.2 matches the requirements by satisfying the value of n in the above equation. Hence, we understand that 5 nodes may form a cluster of trust, or a quorum, to receive and commit client requests, thereby maintaining the nature of distributed systems. However, as per the equation mentioned above, another byzantine / non-byzantine failure will leave the entire system in a confused state on the previous commits that happened in asynchronous flow of requests.
+Considering the 2 byzantine failures, we obtain the following:
+
+Fig 3.3: An ideal case of TARA((1,-1)(1,-1)) network demonstrating TARA architecture with each service cluster suffering from one byzantine / non-byzantine fault.
+
+Since a cluster of 3 nodes can tolerate up-to 1/3rd of fault, both service clusters are in-tact. If one more byzantine or non-byzantine fault occurs within each service cluster, we may observe that the cluster is inconsistent thereby making the entire system unusable in the case of arbitrary non-TARA architectures.
+
 % \begin{figure}[h!]
 % 	\includegraphics[width=\linewidth]{paul-bran.jpg}
 % 	\caption{An ideal case of TARA((1,-2)(1,-2)) network demonstrating TARA architecture with each service cluster suffering from two byzantine / non-byzantine faults.}
