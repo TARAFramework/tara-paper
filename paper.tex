@@ -65,7 +65,8 @@ This change in the network will create a new triad (as shown in the figure 3.5 a
 Hence, the proposed model of architecture, is able to tolerate up-to a maximum of n - f failures out of f expected byzantine failures and form a quorum decently up-to f, and hence making the system more usable than any other proposed models in \cite{ARTICLE:1} and \cite{ARTICLE:3}.
 
 \subsection{Managing Failures}
-As proposed in the concept of Practical Byzantine Fault Tolerance\cite{ARTICLE:1} and Tangaroa\cite{ARTICLE:3} , a BFT Raft cluster designed to tolerate ‘f’ number of Byzantine failures must contain at least n ≥ 3f + 1 nodes, where n − f nodes form a quorum \cite{ARTICLE:3}.
+
+As proposed in the concept of Practical Byzantine Fault Tolerance \cite{ARTICLE:1} and Tangaroa \cite{ARTICLE:3} , a BFT Raft cluster designed to tolerate \textit{f} number of Byzantine failures must contain at least \textit{n = 3f + 1} nodes, where \textit{n - f} nodes form a quorum \cite{ARTICLE:3}.
 
 Consider, to sustain a maximum number of 2 failures, n = 7. Our test network depicted in Fig3.2 matches the requirements by satisfying the value of n in the above equation. Hence, we understand that 5 nodes may form a cluster of trust, or a quorum, to receive and commit client requests, thereby maintaining the nature of distributed systems. However, as per the equation mentioned above, another byzantine / non-byzantine failure will leave the entire system in a confused state on the previous commits that happened in asynchronous flow of requests.
 Considering the 2 byzantine failures, we obtain the following:
