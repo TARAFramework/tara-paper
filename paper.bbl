@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{ARTICLE:1}
+M.~Castro and B.~Liskov, ``Practical byzantine fault tolerance,'' {\em SDI.
+  Vol. 99}, 1999.
+
+\bibitem{ARTICLE:2}
+D.~Ongaro and J.~Ousterhout, ``In search of an understandable consensus
+  algorithm,'' 2014.
+
+\bibitem{ARTICLE:3}
+C.~Copeland and H.~Zhong, ``Tangaroa: a byzantine fault tolerant raft,'' 2016.
+
+\end{thebibliography}
